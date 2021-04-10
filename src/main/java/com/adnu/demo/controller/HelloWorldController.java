@@ -1,6 +1,6 @@
 package com.adnu.demo.controller;
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.adnu.demo.model.Note;
@@ -8,14 +8,14 @@ import com.adnu.demo.model.Note;
 @RestController
 public class HelloWorldController {
 
-	@RequestMapping("/")
+	@GetMapping("/")
 	public String hello()
 	{
 		return "Hello World!";
 	}
 	
 	
-	@RequestMapping("/note")
+	@GetMapping("/object")
 	public Note note()
 	{
 		Note note = new Note();
@@ -23,7 +23,6 @@ public class HelloWorldController {
 		note.setName("Test Note");
 		note.setDescription("This is a test description");
 		
-		return note;
-		
+		return note;	
 	}
 }
